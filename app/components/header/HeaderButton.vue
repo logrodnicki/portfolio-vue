@@ -7,16 +7,12 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-  label: {
-    type: String,
-    default: '',
-  },
-  to: {
-    type: String,
-    default: '',
-  },
-});
+interface Props {
+  label: string;
+  to: string;
+}
+
+const { label, to } = defineProps<Props>();
 </script>
 
 <style lang="scss" scoped>

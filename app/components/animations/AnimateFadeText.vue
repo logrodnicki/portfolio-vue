@@ -12,16 +12,12 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
-  text: {
-    type: String,
-    required: true,
-  },
-  delay: {
-    type: Number,
-    default: 50,
-  },
-});
+interface Props {
+  text: string;
+  delay?: number;
+}
+
+const { text, delay = 50 } = defineProps<Props>();
 
 const getKey = (index: number, letter: string) => {
   return `${letter}-${index}`;
@@ -29,7 +25,7 @@ const getKey = (index: number, letter: string) => {
 
 const getLetterStyle = (index: number) => {
   return {
-    animationDelay: `${index * props.delay}ms`,
+    animationDelay: `${index * delay}ms`,
   };
 };
 </script>

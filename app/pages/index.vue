@@ -4,6 +4,7 @@
       <div class="box">
         <p class="main-text">Hello There!</p>
         <AnimateFadeText text="I am a Frontend Developer" class="small-text" />
+        <SkillsList class="skills-list" />
       </div>
     </div>
   </div>
@@ -11,19 +12,17 @@
 
 <script lang="ts" setup>
 import AnimateFadeText from '~/components/animations/AnimateFadeText.vue';
+import SkillsList from '~/components/home/SkillsList.vue';
 </script>
 
 <style lang="scss" scoped>
 @use '~/assets/style/main.scss';
 
-.text {
-  color: $cl-yellow-300;
-}
-
 .home {
   background: $cl-neutral-950;
-  height: 100vh;
+  //min-height: calc(100vh - 64px);
   padding: 128px;
+  box-sizing: border-box;
 }
 
 .content {
@@ -45,6 +44,11 @@ import AnimateFadeText from '~/components/animations/AnimateFadeText.vue';
 
 .small-text {
   color: $cl-yellow-400;
-  font-size: 24px;
+  font-size: 36px;
+  white-space: nowrap;
+}
+
+.skills-list {
+  margin-top: 64px;
 }
 </style>
