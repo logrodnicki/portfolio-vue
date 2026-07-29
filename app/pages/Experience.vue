@@ -1,5 +1,3 @@
 <template>
-  <div>
-    experience
-  </div>
+  <div>experience</div>
 </template>
