@@ -16,7 +16,7 @@
     "test": "npm run lint:check & npm run format:check"
   },
   "lint-staged": {
-    "*.{ts,vue}": [
+    "src/**/*.{ts,vue}": [
       "eslint --cache --fix",
       "prettier --check ."
     ]
