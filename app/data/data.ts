@@ -1,5 +1,5 @@
 import type { ISkill } from '~/types/skillsTypes';
-import type { IExperienceItem } from '~/types/experienceTypes';
+import type { IJobPosition } from '~/types/experienceTypes';
 import type { IProject } from '~/types/projectsTypes';
 
 export const skills: ISkill[] = [
@@ -58,7 +58,7 @@ export const skills: ISkill[] = [
   },
 ];
 
-export const experience: IExperienceItem[] = [
+export const experience: IJobPosition[] = [
   {
     name: 'E Net Production',
     position: 'Frontend developer',

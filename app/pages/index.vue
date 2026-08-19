@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home page">
     <div class="content">
       <div class="box">
         <p class="main-text">Hello There!</p>
@@ -20,9 +20,9 @@ import SkillsList from '~/components/home/SkillsList.vue';
 
 .home {
   background: $cl-neutral-950;
-  //min-height: calc(100vh - 64px);
   padding: 128px;
   box-sizing: border-box;
+  min-height: calc(100vh - 64px);
 }
 
 .content {

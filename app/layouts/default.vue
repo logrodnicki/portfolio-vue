@@ -1,9 +1,9 @@
 <template>
   <div class="default-layout">
     <AppHeader />
-    <div class="page-content">
+    <main>
       <slot />
-    </div>
+    </main>
   </div>
 </template>
 
@@ -17,11 +17,5 @@ import AppHeader from '@/components/AppHeader.vue';
 .default-layout {
   display: flex;
   flex-direction: column;
-}
-
-.page-content {
-  > div {
-    min-height: calc(100vh - 64px);
-  }
 }
 </style>

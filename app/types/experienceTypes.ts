@@ -1,4 +1,4 @@
-export interface IExperienceItem {
+export interface IJobPosition {
   name: string;
   position: string;
   duties: string[];
