@@ -47,7 +47,7 @@ onBeforeMount(() => {
       });
     },
     {
-      threshold: 0.8,
+      threshold: 0.5,
     }
   );
 });
@@ -58,6 +58,10 @@ onMounted(() => {
   }
 
   observer.observe(section.value);
+});
+
+onBeforeUnmount(() => {
+  observer?.disconnect();
 });
 </script>
 
@@ -141,7 +145,10 @@ $animationTime: 750ms;
   margin: 0 0 16px 0;
   transform: translateX(-100px) rotateZ(-5deg);
   opacity: 0;
-  animation: nameAnimation $animationTime ease-in-out forwards;
+
+  .is-visible & {
+    animation: nameAnimation $animationTime ease-in-out forwards;
+  }
 }
 
 .position {
@@ -149,18 +156,27 @@ $animationTime: 750ms;
   font-size: 18px;
   transform: translateX(-15px) translateY(25px);
   opacity: 0;
-  animation: positionAnimation $animationTime ease-in-out forwards;
+
+  .is-visible & {
+    animation: positionAnimation $animationTime ease-in-out forwards;
+  }
 }
 
 .list {
   color: $cl-custom-4;
-  animation: dutiesAnimations $animationTime ease-in-out forwards;
+
+  .is-visible & {
+    animation: dutiesAnimations $animationTime ease-in-out forwards;
+  }
 }
 
 .dates {
   color: $cl-slate-400;
   transform: translateX(-15px) translateY(25px);
   opacity: 0;
-  animation: datesAnimations $animationTime ease-in-out forwards;
+
+  .is-visible & {
+    animation: datesAnimations $animationTime ease-in-out forwards;
+  }
 }
 </style>

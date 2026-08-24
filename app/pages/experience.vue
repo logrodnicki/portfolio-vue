@@ -41,6 +41,8 @@ const rightColumnItems = computed((): IJobPosition[] => {
   font-size: 64px;
   line-height: 74px;
   color: $cl-custom-4;
+  margin-top: 0;
+  margin-bottom: 96px;
 }
 
 .content {
