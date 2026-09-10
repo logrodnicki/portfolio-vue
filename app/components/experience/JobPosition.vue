@@ -16,7 +16,8 @@
 
 <script lang="ts" setup>
 import type { IJobPosition } from '~/types/experienceTypes';
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
+import useIntersectionObserver from '~/hooks/useIntersectionObserver';
 
 interface Props {
   jobPosition: IJobPosition;
@@ -24,45 +25,17 @@ interface Props {
 
 const { jobPosition } = defineProps<Props>();
 
-const section = ref<HTMLElement | null>(null);
-const isVisible = ref(false);
-
-let observer: null | IntersectionObserver = null;
-
 const { name, position, duties, startDate, endDate } = jobPosition || {};
+
+const section = ref<HTMLElement | null>(null);
+
+const { isVisible } = useIntersectionObserver(section);
 
 const dates = `${startDate} - ${endDate}`;
 
 const classes = computed(() => ({
   'is-visible': isVisible.value,
 }));
-
-onBeforeMount(() => {
-  observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          isVisible.value = true;
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  );
-});
-
-onMounted(() => {
-  if (!section.value || !observer) {
-    return;
-  }
-
-  observer.observe(section.value);
-});
-
-onBeforeUnmount(() => {
-  observer?.disconnect();
-});
 </script>
 
 <style lang="scss" scoped>

@@ -16,6 +16,7 @@ export default withNuxt([
           ignores: [],
         },
       ],
+      'vue/attribute-hyphenation': ['never', { ignore: ['custom-prop'] }],
     },
   },
 ]);

@@ -2,30 +2,20 @@
   <div class="experience">
     <h1 class="header">Experience</h1>
 
-    <div class="content">
-      <div class="list">
-        <JobPosition v-for="item in leftColumnItems" :key="item.name" :job-position="item" />
-      </div>
-
-      <div class="list right-list">
-        <JobPosition v-for="item in rightColumnItems" :key="item.name" :job-position="item" />
-      </div>
+    <div class="content-new">
+      <JobPositionRow
+        v-for="(jobPosition, index) in experience"
+        :key="jobPosition.name"
+        :job-position="jobPosition"
+        :index="index"
+      />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import JobPosition from '~/components/experience/JobPosition.vue';
 import { experience } from '~/data/data';
-import type { IJobPosition } from '~/types/experienceTypes';
-
-const leftColumnItems = computed((): IJobPosition[] => {
-  return experience.filter((item, index) => !index || index % 2 === 0);
-});
-
-const rightColumnItems = computed((): IJobPosition[] => {
-  return experience.filter((item, index) => index % 2 !== 0);
-});
+import JobPositionRow from '~/components/experience/JobPositionRow.vue';
 </script>
 
 <style lang="scss" scoped>
@@ -60,5 +50,11 @@ const rightColumnItems = computed((): IJobPosition[] => {
 
 .right-list {
   padding-top: 96px;
+}
+
+.content-new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
