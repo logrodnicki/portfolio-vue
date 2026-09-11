@@ -34,7 +34,8 @@ const classes = computed(() => ({
 .date-chip {
   padding: 8px 16px;
   border-radius: 16px;
-  background-color: $cl-custom-3;
+  background: linear-gradient(135deg, $cl-custom-2, $cl-custom-3);
+  border: 1px solid $cl-custom-2;
   color: $cl-custom-4;
   height: fit-content;
   width: 180px;

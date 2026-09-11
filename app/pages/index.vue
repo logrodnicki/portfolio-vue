@@ -13,6 +13,9 @@
 <script lang="ts" setup>
 import AnimateFadeText from '~/components/animations/AnimateFadeText.vue';
 import SkillsList from '~/components/home/SkillsList.vue';
+import { HEADER_HEIGHT_IN_PX } from '~/helpers/commonHelpers';
+
+const headerHeight = `${HEADER_HEIGHT_IN_PX}px`;
 </script>
 
 <style lang="scss" scoped>
@@ -22,7 +25,7 @@ import SkillsList from '~/components/home/SkillsList.vue';
   background: $cl-neutral-950;
   padding: 128px;
   box-sizing: border-box;
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - v-bind(headerHeight));
 }
 
 .content {

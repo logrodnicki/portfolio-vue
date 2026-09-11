@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="to" class="header-button">
+  <NuxtLink :to="to" class="header-button" active-class="active">
     <span class="background" />
     <span class="hover-background" />
     <span class="label">{{ label }}</span>
@@ -54,14 +54,16 @@ const { label, to } = defineProps<Props>();
   transform: translateX(-101%);
 }
 
-.active-background {
-  background-color: $cl-purple-500;
-  transform: translateX(-101%);
+.active {
+  color: $cl-custom-1;
+
+  .background {
+    background-color: $cl-custom-4;
+  }
 }
 
 .background,
-.hover-background,
-.active-background {
+.hover-background {
   position: absolute;
   width: 100%;
   height: 100%;

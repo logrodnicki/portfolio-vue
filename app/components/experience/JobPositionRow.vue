@@ -20,7 +20,7 @@ interface Props {
 
 const { jobPosition, index } = defineProps<Props>();
 
-const formattedDate = `${jobPosition.startDate}-${jobPosition.endDate}`;
+const formattedDate = `${jobPosition.startDate} - ${jobPosition.endDate}`;
 
 const isOdd = index % 2 !== 0;
 

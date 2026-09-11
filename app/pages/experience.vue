@@ -1,8 +1,8 @@
 <template>
   <div class="experience">
-    <h1 class="header">Experience</h1>
+    <PageHeader title="Experience" />∂
 
-    <div class="content-new">
+    <div class="content">
       <JobPositionRow
         v-for="(jobPosition, index) in experience"
         :key="jobPosition.name"
@@ -16,6 +16,10 @@
 <script lang="ts" setup>
 import { experience } from '~/data/data';
 import JobPositionRow from '~/components/experience/JobPositionRow.vue';
+import { HEADER_HEIGHT_IN_PX } from '~/helpers/commonHelpers';
+import PageHeader from '~/components/common/PageHeader.vue';
+
+const headerHeight = `${HEADER_HEIGHT_IN_PX}px`;
 </script>
 
 <style lang="scss" scoped>
@@ -25,6 +29,7 @@ import JobPositionRow from '~/components/experience/JobPositionRow.vue';
   background: $cl-neutral-950;
   padding: 64px;
   box-sizing: border-box;
+  min-height: calc(100vh - v-bind(headerHeight));
 }
 
 .header {
@@ -36,23 +41,6 @@ import JobPositionRow from '~/components/experience/JobPositionRow.vue';
 }
 
 .content {
-  display: flex;
-  gap: 48px;
-  justify-content: center;
-}
-
-.list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 128px;
-}
-
-.right-list {
-  padding-top: 96px;
-}
-
-.content-new {
   display: flex;
   flex-direction: column;
   align-items: center;

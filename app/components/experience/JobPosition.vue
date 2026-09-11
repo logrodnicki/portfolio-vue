@@ -5,8 +5,6 @@
 
       <p class="position">{{ position }}</p>
 
-      <p class="dates">{{ dates }}</p>
-
       <ul class="list">
         <li v-for="(duty, index) in duties" :key="index">{{ duty }}</li>
       </ul>
@@ -25,13 +23,11 @@ interface Props {
 
 const { jobPosition } = defineProps<Props>();
 
-const { name, position, duties, startDate, endDate } = jobPosition || {};
+const { name, position, duties } = jobPosition || {};
 
 const section = ref<HTMLElement | null>(null);
 
 const { isVisible } = useIntersectionObserver(section);
-
-const dates = `${startDate} - ${endDate}`;
 
 const classes = computed(() => ({
   'is-visible': isVisible.value,
@@ -60,13 +56,6 @@ $animationTime: 750ms;
 }
 
 @keyframes positionAnimation {
-  to {
-    opacity: 1;
-    transform: translateX(0) translateY(0);
-  }
-}
-
-@keyframes datesAnimations {
   to {
     opacity: 1;
     transform: translateX(0) translateY(0);
@@ -106,7 +95,7 @@ $animationTime: 750ms;
 }
 
 .content {
-  background: $cl-custom-6;
+  background: linear-gradient(135deg, $cl-custom-6, $cl-custom-7);
   padding: 24px;
   border-radius: 16px;
   border: 1px solid $cl-custom-1;
@@ -140,16 +129,6 @@ $animationTime: 750ms;
 
   .is-visible & {
     animation: dutiesAnimations $animationTime ease-in-out forwards;
-  }
-}
-
-.dates {
-  color: $cl-slate-400;
-  transform: translateX(-15px) translateY(25px);
-  opacity: 0;
-
-  .is-visible & {
-    animation: datesAnimations $animationTime ease-in-out forwards;
   }
 }
 </style>

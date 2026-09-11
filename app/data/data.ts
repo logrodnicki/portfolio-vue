@@ -136,7 +136,7 @@ export const experience: IJobPosition[] = [
 export const projects: IProject[] = [
   {
     name: 'Media Expert',
-    description: 'Online store',
+    subtitle: 'Online store',
     technologies: [
       {
         name: 'Vue',
@@ -149,7 +149,34 @@ export const projects: IProject[] = [
     ],
   },
   {
-    name: 'Media Expert - Admin Panel',
+    name: 'Media Expert - Multi-bank sales platform',
+    subtitle: 'Installments form',
+    technologies: [
+      {
+        name: 'Vue',
+        logoUrl: '/images/vue.png',
+      },
+      {
+        name: 'Typescript',
+        logoUrl: '/images/typescript.png',
+      },
+      {
+        name: 'Mercure',
+        logoUrl: '/images/mercure.svg',
+      },
+      {
+        name: 'PHP',
+        logoUrl: '/images/php.png',
+      },
+      {
+        name: 'Postgres',
+        logoUrl: '/images/postgres.png',
+      },
+    ],
+  },
+  {
+    name: 'Media Expert - Services and installments manager',
+    subtitle: 'Administrator panel',
     technologies: [
       {
         name: 'Vue',
@@ -163,7 +190,7 @@ export const projects: IProject[] = [
   },
   {
     name: 'Blis',
-    description: 'Marketing data visualization',
+    subtitle: 'Marketing data visualization',
     technologies: [
       {
         name: 'React',
@@ -180,12 +207,16 @@ export const projects: IProject[] = [
     ],
   },
   {
-    name: 'Ordering stack',
-    description: 'Application for restaurant orders',
+    name: 'Ordering Stack',
+    subtitle: 'Application for restaurant ordering',
     technologies: [
       {
         name: 'React',
         logoUrl: '/images/react.png',
+      },
+      {
+        name: 'Typescript',
+        logoUrl: '/images/typescript.png',
       },
       {
         name: 'React Saga',
@@ -198,7 +229,26 @@ export const projects: IProject[] = [
     ],
   },
   {
+    name: 'Museum Online',
+    subtitle: 'Website with museum collection',
+    technologies: [
+      {
+        name: 'React',
+        logoUrl: '/images/react.png',
+      },
+      {
+        name: 'Typescript',
+        logoUrl: '/images/typescript.png',
+      },
+      {
+        name: 'Next.js',
+        logoUrl: '/images/next.png',
+      },
+    ],
+  },
+  {
     name: 'Stationary store manager',
+    subtitle: 'Administrator panel',
     technologies: [
       {
         name: 'Vue',
@@ -224,7 +274,7 @@ export const projects: IProject[] = [
   },
   {
     name: 'Piotr i Paweł',
-    description: 'Online store',
+    subtitle: 'Online store',
     technologies: [
       {
         name: 'Vue',
@@ -241,7 +291,8 @@ export const projects: IProject[] = [
     ],
   },
   {
-    name: 'Employee tasks manager',
+    name: 'Netis - tasks manager',
+    subtitle: 'Internal tasks manager',
     technologies: [
       {
         name: 'Vue',
