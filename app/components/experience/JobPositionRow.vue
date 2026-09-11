@@ -1,7 +1,7 @@
 <template>
   <div class="job-position-row" :class="classes">
     <JobPosition :job-position="jobPosition" class="job-position" />
-    <TimeLine class="time-line" />
+    <TimeLine class="time-line" :index="index" />
     <DateChip :date="formattedDate" class="date-chip" />
   </div>
 </template>
