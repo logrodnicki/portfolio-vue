@@ -137,6 +137,8 @@ export const projects: IProject[] = [
   {
     name: 'Media Expert',
     subtitle: 'Online store',
+    description: 'Online store online store online store online store online',
+    link: 'https://www.mediaexpert.pl',
     technologies: [
       {
         name: 'Vue',

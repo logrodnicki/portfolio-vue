@@ -7,15 +7,12 @@ export default defineNuxtConfig({
   css: ['~/assets/style/main.scss'],
   compatibilityDate: '2025-07-15',
 
-  // buildModules: [
-  //   '@nuxtjs/style-resources',
-  // ],
-
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "~/assets/style/_colors.scss" as *;',
+          additionalData:
+            '@use "~/assets/style/_colors.scss" as *;@use "~/assets/style/_zIndex.scss" as *;',
         },
       },
     },

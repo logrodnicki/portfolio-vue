@@ -43,7 +43,7 @@ const headerHeight = `${HEADER_HEIGHT_IN_PX}px`;
 .header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: $z-index-header;
   height: v-bind(headerHeight);
   background: linear-gradient(45deg, $cl-custom-1 50%, $cl-purple-950 100%);
   display: flex;

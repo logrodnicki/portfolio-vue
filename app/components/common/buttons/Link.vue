@@ -1,35 +1,36 @@
 <template>
-  <NuxtLink :to="to" class="header-button" active-class="active">
+  <a class="link" :href="href" target="_blank">
     <span class="background" />
     <span class="hover-background" />
     <span class="label">{{ label }}</span>
-  </NuxtLink>
+  </a>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 interface Props {
   label: string;
-  to: string;
+  href: string;
 }
 
-const { label, to } = defineProps<Props>();
+defineProps<Props>();
 </script>
 
 <style lang="scss" scoped>
-@use '~/assets/style/main.scss';
-
-.header-button {
+.link {
+  padding: 4px 16px;
+  background-color: $cl-custom-3;
+  color: $cl-custom-4;
+  width: fit-content;
+  height: 32px;
+  border-radius: 16px;
+  text-decoration: none;
   display: flex;
-  align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
+  align-items: center;
+  cursor: pointer;
   transition: color 300ms linear;
-  color: white;
-  height: 24px;
-  padding: 8px 16px;
-  border-radius: calc(infinity * 1px);
-  text-decoration-line: none;
+  overflow: hidden;
+  position: relative;
 
   &:hover:not(.active) {
     color: $cl-custom-1;
@@ -45,20 +46,12 @@ const { label, to } = defineProps<Props>();
 }
 
 .background {
-  background-color: $cl-custom-3;
+  background: $cl-custom-3;
 }
 
 .hover-background {
   background-color: $cl-custom-4;
   transform: translateX(-101%);
-}
-
-.active {
-  color: $cl-custom-1;
-
-  .background {
-    background-color: $cl-custom-4;
-  }
 }
 
 .background,

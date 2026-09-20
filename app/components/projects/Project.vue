@@ -1,12 +1,12 @@
 <template>
-  <div class="project">
+  <div class="project" @click="handleOpenModal">
     <span class="name">{{ name }}</span>
 
     <span v-if="subtitle" class="subtitle">{{ subtitle }}</span>
 
     <div class="technologies">
       <Technology
-        v-for="technology in project.technologies"
+        v-for="technology in technologies"
         :key="technology.name"
         :technology="technology"
       />
@@ -23,8 +23,13 @@ interface Props {
 }
 
 const { project } = defineProps<Props>();
+const emit = defineEmits(['openModal']);
 
-const { name, description, subtitle } = project || {};
+const { name, subtitle, technologies } = project || {};
+
+const handleOpenModal = () => {
+  emit('openModal', project);
+};
 </script>
 
 <style lang="scss" scoped>
@@ -36,6 +41,17 @@ const { name, description, subtitle } = project || {};
   display: flex;
   flex-direction: column;
   gap: 32px;
+  transition:
+    transform 300ms ease-in-out,
+    border-color 300ms ease-in-out,
+    background 300ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-10px);
+    border-color: $cl-custom-3;
+    background: linear-gradient(135deg, $cl-custom-6, $cl-custom-7 30%);
+  }
 }
 
 .name {

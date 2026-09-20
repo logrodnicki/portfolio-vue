@@ -3,6 +3,7 @@ export interface IProject {
   subtitle?: string;
   description?: string;
   technologies: ITechnology[];
+  link?: string;
 }
 
 export interface ITechnology {
