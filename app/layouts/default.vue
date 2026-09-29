@@ -17,5 +17,6 @@ import AppHeader from '@/components/AppHeader.vue';
 .default-layout {
   display: flex;
   flex-direction: column;
+  background: $cl-neutral-950;
 }
 </style>
