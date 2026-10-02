@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="to" class="header-button" active-class="active">
+  <NuxtLink :to="to" class="header-button" active-class="active" :class="classes">
     <span class="background" />
     <span class="hover-background" />
     <span class="label">{{ label }}</span>
@@ -10,9 +10,14 @@
 interface Props {
   label: string;
   to: string;
+  fullWidth?: boolean;
 }
 
-const { label, to } = defineProps<Props>();
+const { label, to, fullWidth } = defineProps<Props>();
+
+const classes = computed(() => ({
+  'full-width': fullWidth,
+}));
 </script>
 
 <style lang="scss" scoped>

@@ -1,6 +1,26 @@
 import type { ISkill } from '~/types/skillsTypes';
 import type { IJobPosition } from '~/types/experienceTypes';
 import type { IProject } from '~/types/projectsTypes';
+import type { IHeaderButton } from '~/types/commonTypes';
+
+export const headerButtons: IHeaderButton[] = [
+  {
+    label: 'Home',
+    to: '/',
+  },
+  {
+    label: 'Experience',
+    to: '/experience',
+  },
+  {
+    label: 'Projects',
+    to: '/projects',
+  },
+  {
+    label: 'Contact',
+    to: '/contact',
+  },
+];
 
 export const skills: ISkill[] = [
   {

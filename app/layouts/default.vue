@@ -1,6 +1,7 @@
 <template>
   <div class="default-layout">
-    <AppHeader />
+    <Header />
+    <MobileHeader />
     <main>
       <slot />
     </main>
@@ -8,7 +9,8 @@
 </template>
 
 <script lang="ts" setup>
-import AppHeader from '@/components/AppHeader.vue';
+import Header from '~/components/header/Header.vue';
+import MobileHeader from '~/components/header/MobileHeader.vue';
 </script>
 
 <style lang="scss" scoped>

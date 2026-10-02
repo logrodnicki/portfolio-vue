@@ -1,5 +1,5 @@
 <template>
-  <button class="close-button" @click="handleClick">
+  <button class="close-button" :class="classes" @click="handleClick">
     <span class="background" />
     <span class="hover-background" />
     <span class="label">{{ label }}</span>
@@ -9,18 +9,64 @@
 <script lang="ts" setup>
 interface Props {
   label: string;
+  useCloseAnimation?: boolean;
 }
 
-defineProps<Props>();
+const { label, useCloseAnimation } = defineProps<Props>();
 
 const emit = defineEmits(['click']);
 
+const isClickAnimationPending = ref(false);
+const timeout = ref<NodeJS.Timeout | null>(null);
+
+const classes = computed(() => ({
+  'is-click-animation': isClickAnimationPending.value,
+}));
+
 const handleClick = () => {
-  emit('click');
+  if (!useCloseAnimation) {
+    emit('click');
+
+    return;
+  }
+
+  isClickAnimationPending.value = true;
+
+  timeout.value = setTimeout(() => {
+    isClickAnimationPending.value = false;
+
+    emit('click');
+  }, 500);
 };
+
+onBeforeUnmount(() => {
+  if (!timeout.value) {
+    return;
+  }
+
+  clearTimeout(timeout.value);
+});
 </script>
 
 <style lang="scss" scoped>
+@keyframes clickAnimation {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(0.7);
+  }
+
+  75% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 .close-button {
   background: transparent;
   height: 32px;
@@ -73,5 +119,9 @@ const handleClick = () => {
 .label {
   z-index: 1;
   transition: transform 200ms linear;
+}
+
+.is-click-animation {
+  animation: clickAnimation 500ms ease-in-out forwards;
 }
 </style>
