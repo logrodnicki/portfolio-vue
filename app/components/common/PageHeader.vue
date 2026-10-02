@@ -12,10 +12,15 @@ defineProps<Props>();
 
 <style lang="scss" scoped>
 .page-header {
-  font-size: 64px;
+  font-size: 48px;
   line-height: 74px;
   color: $cl-custom-4;
   margin-top: 0;
-  margin-bottom: 96px;
+  margin-bottom: 32px;
+
+  @media (min-width: $breakpoint-small-device) {
+    font-size: 64px;
+    margin-bottom: 96px;
+  }
 }
 </style>

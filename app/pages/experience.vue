@@ -10,6 +10,15 @@
         :index="index"
       />
     </div>
+
+    <div class="content-mobile">
+      <JobPositionRowMobile
+        v-for="(jobPosition, index) in experience"
+        :key="jobPosition.name"
+        :job-position="jobPosition"
+        :index="index"
+      />
+    </div>
   </div>
 </template>
 
@@ -18,6 +27,7 @@ import { experience } from '~/data/data';
 import JobPositionRow from '~/components/experience/JobPositionRow.vue';
 import { HEADER_HEIGHT_IN_PX } from '~/helpers/commonHelpers';
 import PageHeader from '~/components/common/PageHeader.vue';
+import JobPositionRowMobile from '~/components/experience/JobPositionRowMobile.vue';
 
 const headerHeight = `${HEADER_HEIGHT_IN_PX}px`;
 </script>
@@ -27,9 +37,13 @@ const headerHeight = `${HEADER_HEIGHT_IN_PX}px`;
 
 .experience {
   background: $cl-neutral-950;
-  padding: 64px;
+  padding: 32px;
   box-sizing: border-box;
   min-height: calc(100vh - v-bind(headerHeight));
+
+  @media (min-width: $breakpoint-small-device) {
+    padding: 64px;
+  }
 }
 
 .header {
@@ -41,8 +55,22 @@ const headerHeight = `${HEADER_HEIGHT_IN_PX}px`;
 }
 
 .content {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: $breakpoint-small-device) {
+    display: flex;
+  }
+}
+
+.content-mobile {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+
+  @media (min-width: $breakpoint-small-device) {
+    display: none;
+  }
 }
 </style>

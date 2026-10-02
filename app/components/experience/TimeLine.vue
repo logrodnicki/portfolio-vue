@@ -97,9 +97,13 @@ onBeforeUnmount(() => {
   background-color: $cl-custom-4;
   padding: 2px;
   position: absolute;
-  top: v-bind(computedTopMargin);
+  top: 50px;
   opacity: 0;
   transform: translateY(-10px);
+
+  @media (min-width: $breakpoint-small-device) {
+    top: v-bind(computedTopMargin);
+  }
 
   .is-animation-pending & {
     animation: showAnimation 750ms forwards ease-in-out;

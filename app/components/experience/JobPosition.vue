@@ -80,7 +80,8 @@ $animationTime: 750ms;
 .job-position {
   padding: 1px;
   background-color: $cl-violet-900;
-  width: 384px;
+  width: 100%;
+  max-width: 384px;
   border-radius: 16px;
   opacity: 0;
   transform: translateY(-25px) scale(0.9);
@@ -150,6 +151,7 @@ $animationTime: 750ms;
 
 .list {
   color: $cl-custom-4;
+  padding-left: 16px;
 
   .is-animation-pending & {
     animation: dutiesAnimations $animationTime ease-in-out forwards;

@@ -41,8 +41,8 @@ const styles = {
 }
 
 .skill {
-  height: 96px;
-  width: 96px;
+  height: 64px;
+  width: 64px;
   background-color: $cl-custom-4;
   border-radius: 16px;
   display: flex;
@@ -50,12 +50,22 @@ const styles = {
   align-items: center;
   opacity: 0;
   animation: fadeOut 1000ms ease-in-out forwards;
+
+  @media (min-width: $breakpoint-small-device) {
+    height: 96px;
+    width: 96px;
+  }
 }
 
 .image-wrapper {
-  height: 64px;
-  width: 64px;
+  height: 48px;
+  width: 48px;
   display: flex;
+
+  @media (min-width: $breakpoint-small-device) {
+    height: 64px;
+    width: 64px;
+  }
 }
 
 .image {

@@ -23,9 +23,13 @@ const headerHeight = `${HEADER_HEIGHT_IN_PX}px`;
 
 .home {
   background: $cl-neutral-950;
-  padding: 128px;
+  padding: 24px;
   box-sizing: border-box;
   min-height: calc(100vh - v-bind(headerHeight));
+
+  @media (min-width: $breakpoint-small-device) {
+    padding: 128px;
+  }
 }
 
 .content {
@@ -48,7 +52,10 @@ const headerHeight = `${HEADER_HEIGHT_IN_PX}px`;
 .small-text {
   color: $cl-yellow-400;
   font-size: 36px;
-  white-space: nowrap;
+
+  @media (min-width: $breakpoint-small-device) {
+    white-space: nowrap;
+  }
 }
 
 .skills-list {
