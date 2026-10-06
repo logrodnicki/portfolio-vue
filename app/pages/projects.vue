@@ -47,15 +47,24 @@ const handleCloseModal = () => {
 <style lang="scss" scoped>
 .projects {
   background: $cl-neutral-950;
-  padding: 64px;
+  padding: 32px;
   box-sizing: border-box;
   min-height: calc(100vh - v-bind(headerHeight));
+
+  @media (min-width: $breakpoint-small-device) {
+    padding: 64px;
+  }
 }
 
 .list {
-  gap: 64px;
+  gap: 32px;
   flex-wrap: wrap;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: 1fr;
+
+  @media (min-width: $breakpoint-small-device) {
+    gap: 64px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
 }
 </style>

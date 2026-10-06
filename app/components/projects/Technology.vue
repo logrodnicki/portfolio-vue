@@ -28,18 +28,24 @@ const { name, logoUrl } = technology || {};
   gap: 8px;
   align-items: center;
   border: 1px solid $cl-custom-4;
-  height: 32px;
-  border-radius: 16px;
-  padding: 0 16px;
+  height: 24px;
+  border-radius: 12px;
+  padding: 0 12px;
   color: $cl-custom-4;
   background-color: $cl-custom-6;
   font-size: 12px;
   width: fit-content;
+
+  @media (min-width: $breakpoint-tablet) {
+    height: 32px;
+    border-radius: 16px;
+    padding: 0 16px;
+  }
 }
 
 .image {
-  height: 32px;
-  width: 32px;
+  height: 24px;
+  width: 24px;
   border-radius: 50%;
   background-color: $cl-custom-6;
   display: flex;
@@ -47,6 +53,11 @@ const { name, logoUrl } = technology || {};
   align-items: center;
   padding: 4px;
   box-sizing: border-box;
+
+  @media (min-width: $breakpoint-tablet) {
+    height: 32px;
+    width: 32px;
+  }
 
   img {
     max-height: 100%;

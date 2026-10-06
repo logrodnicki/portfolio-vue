@@ -35,6 +35,7 @@ const handleCloseMenu = () => {
   box-sizing: border-box;
   justify-content: flex-end;
   align-items: center;
+  background: linear-gradient(45deg, $cl-custom-1 10%, $cl-purple-950 100%);
 
   @media (min-width: $breakpoint-tablet) {
     display: none;

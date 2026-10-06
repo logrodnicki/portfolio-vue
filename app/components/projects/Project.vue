@@ -37,7 +37,7 @@ const handleOpenModal = () => {
   background: linear-gradient(135deg, $cl-custom-6, $cl-custom-7);
   border: 1px solid $cl-violet-900;
   border-radius: 16px;
-  padding: 32px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -46,6 +46,10 @@ const handleOpenModal = () => {
     border-color 300ms ease-in-out,
     background 300ms ease-in-out;
   cursor: pointer;
+
+  @media (min-width: $breakpoint-small-device) {
+    padding: 32px;
+  }
 
   &:hover {
     transform: translateY(-10px);
