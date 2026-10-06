@@ -1,5 +1,5 @@
 <template>
-  <div class="experience">
+  <Page class="experience">
     <PageHeader title="Experience" />∂
 
     <div class="content">
@@ -19,17 +19,15 @@
         :index="index"
       />
     </div>
-  </div>
+  </Page>
 </template>
 
 <script lang="ts" setup>
 import { experience } from '~/data/data';
 import JobPositionRow from '~/components/experience/JobPositionRow.vue';
-import { HEADER_HEIGHT_IN_PX } from '~/helpers/commonHelpers';
 import PageHeader from '~/components/common/PageHeader.vue';
 import JobPositionRowMobile from '~/components/experience/JobPositionRowMobile.vue';
-
-const headerHeight = `${HEADER_HEIGHT_IN_PX}px`;
+import Page from '~/components/common/Page.vue';
 </script>
 
 <style lang="scss" scoped>
@@ -37,13 +35,6 @@ const headerHeight = `${HEADER_HEIGHT_IN_PX}px`;
 
 .experience {
   background: $cl-neutral-950;
-  padding: 32px;
-  box-sizing: border-box;
-  min-height: calc(100vh - v-bind(headerHeight));
-
-  @media (min-width: $breakpoint-small-device) {
-    padding: 64px;
-  }
 }
 
 .header {

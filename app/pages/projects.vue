@@ -1,5 +1,5 @@
 <template>
-  <div class="projects">
+  <Page class="projects">
     <PageHeader title="Projects" />
 
     <div class="list">
@@ -17,18 +17,16 @@
       :project="selectedProject"
       @close="handleCloseModal"
     />
-  </div>
+  </Page>
 </template>
 
 <script lang="ts" setup>
-import { HEADER_HEIGHT_IN_PX } from '~/helpers/commonHelpers';
 import PageHeader from '~/components/common/PageHeader.vue';
 import Project from '~/components/projects/Project.vue';
 import { projects } from '~/data/data';
 import ProjectDetailsModal from '~/components/projects/ProjectDetailsModal.vue';
 import type { IProject } from '~/types/projectsTypes';
-
-const headerHeight = `${HEADER_HEIGHT_IN_PX}px`;
+import Page from '~/components/common/Page.vue';
 
 const isModalVisible = ref(false);
 const selectedProject = ref<IProject | null>();
@@ -47,13 +45,6 @@ const handleCloseModal = () => {
 <style lang="scss" scoped>
 .projects {
   background: $cl-neutral-950;
-  padding: 32px;
-  box-sizing: border-box;
-  min-height: calc(100vh - v-bind(headerHeight));
-
-  @media (min-width: $breakpoint-small-device) {
-    padding: 64px;
-  }
 }
 
 .list {
