@@ -1,6 +1,8 @@
 <template>
   <Page class="projects">
-    <PageHeader title="Projects" />
+    <template #header>
+      <PageHeader title="Projects" />
+    </template>
 
     <div class="list">
       <Project

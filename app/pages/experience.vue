@@ -1,6 +1,8 @@
 <template>
   <Page class="experience">
-    <PageHeader title="Experience" />∂
+    <template #header>
+      <PageHeader title="Experience" />
+    </template>
 
     <div class="content">
       <JobPositionRow

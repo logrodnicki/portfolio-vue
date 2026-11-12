@@ -1,6 +1,8 @@
 <template>
   <Page class="contact">
-    <PageHeader title="Contact" />
+    <template #header>
+      <PageHeader title="Contact" />
+    </template>
 
     <div class="content">
       <div class="form-wrapper">
