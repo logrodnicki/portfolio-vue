@@ -8,6 +8,7 @@
 
 <script setup lang="ts">
 import ExperienceBackgroundContent from '~/components/backgrounds/experience/ExperienceBackgroundContent.vue';
+import { TresCanvas } from '@tresjs/core';
 
 const time = ref(1);
 const interval = ref<NodeJS.Timeout | null>(null);
@@ -27,10 +28,6 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 .canvas {
-  background: orange;
-}
-
-.test {
-  background: red;
+  background: black;
 }
 </style>
