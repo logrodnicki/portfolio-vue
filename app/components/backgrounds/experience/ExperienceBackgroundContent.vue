@@ -43,6 +43,7 @@ void main() {
 
 const fragmentShader = `
 uniform float uTime;
+uniform float uTimeCloud;
 varying vec2 vUv;
 uniform vec2 uRes;
 
@@ -98,7 +99,7 @@ void main() {
   vec3 c = mix(c1, c2, ((1.0 - vUv.y) - 0.1));
 
   // Layer 1
-  speed = uTime * 175.0;
+  speed = uTimeCloud * 175.0;
   xC = uv.x * aspect * 2.0 + speed * 0.044 * 0.070;
   position = fbm(xC, 2.0) * 0.11 + fbm(xC * 0.3 + 68.0, 3.0) * 0.9;
   dist = abs(uv.y - position - 0.85);
@@ -114,7 +115,7 @@ void main() {
   starMask *= (1.0 - mask);
 
   // Layer 2
-  speed = uTime * 110.0;
+  speed = uTimeCloud * 110.0;
   xC = uv.x * aspect * 2.0 + speed * 0.044 * 0.070;
   position = fbm(xC, 7.5) * 0.3 + fbm(xC * 0.5 + 90.0, 2.0) * 0.85;
   dist = abs(uv.y - position - 0.75);
@@ -129,7 +130,7 @@ void main() {
   starMask *= (1.0 - mask);
 
   // Layer 3
-  speed = uTime * 125.0;
+  speed = uTimeCloud * 125.0;
   xC = uv.x * aspect * 2.0 + speed * 0.044 * 0.070;
   position = fbm(xC, 2.0) * 0.11 + fbm(xC * 0.3 + 68.0, 3.0) * 0.9;
   dist = abs(uv.y - position - 0.6);
@@ -144,7 +145,7 @@ void main() {
   starMask *= (1.0 - mask);
 
   // Layer 4
-  speed = uTime * 100.0;
+  speed = uTimeCloud * 100.0;
   xC = uv.x * aspect * 2.0 + speed * 0.044 * 0.070;
   position = fbm(xC, 7.0) * 0.11 + fbm(xC * 0.3 + 85.0, 2.0) * 1.0;
   dist = abs(uv.y - position - 0.4);
@@ -172,6 +173,7 @@ void main() {
 const shadersUniforms = computed(() => {
   return {
     uTime: { value: time.value },
+    uTimeCloud: { value: 1.0 },
     uRes: { value: [window.innerWidth, window.innerHeight] },
   };
 });

@@ -1,5 +1,5 @@
 <template>
-  <div class="test">
+  <div class="experience-background">
     <TresCanvas window-size class="canvas">
       <ExperienceBackgroundContent :time="time" />
     </TresCanvas>
